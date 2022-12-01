@@ -28,7 +28,6 @@ public class MessageReceiver implements Runnable{
                 datagramSocket.receive(datagramPacket);
                 String receivedMessage = new String(datagramPacket.getData(), 0, datagramPacket.getLength(), StandardCharsets.UTF_8);
                 Message message = gson.fromJson(receivedMessage, Message.class);
-
                 jTextArea.append(message.getSender() + " : " + message.getContent() + "\n");
             } catch (IOException e) {
                 throw new RuntimeException(e);

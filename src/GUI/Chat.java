@@ -3,10 +3,8 @@ package GUI;
 import Client.Client;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-public class Chat extends JFrame implements ActionListener {
+public class Chat extends JFrame {
     private JButton send;
     private JTextField textField1;
     private JTextArea textArea1;
@@ -26,13 +24,10 @@ public class Chat extends JFrame implements ActionListener {
         textArea1.setEditable(false);
         list1.setModel(users);
         client = new Client(this, username, textArea1);
-        send.addActionListener(this);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        textArea1.append("Me: " + textField1.getText() + "\n");
-        client.sendMessage(textField1.getText());
-        textField1.setText("");
+        send.addActionListener(e -> {
+            textArea1.append("Me: " + textField1.getText() + "\n");
+            client.sendMessage(textField1.getText());
+            textField1.setText("");
+        });
     }
 }
