@@ -38,7 +38,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="277e2" class="javax.swing.JList" binding="list1" default-binding="true">
+          <component id="2b5c3" class="javax.swing.JTextArea" binding="textArea2" default-binding="true">
             <constraints/>
             <properties/>
           </component>
